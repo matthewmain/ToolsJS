@@ -40,12 +40,12 @@ var Tl = {
 
 	//draws a simple symmetrical arc between two points
 	arcFromTo: function( startPoint, endPoint, arcHeight ) {
-	  var ah = arcHeight;  // arc height as ratio of distance between points
-	  var p1 = { x: startPoint.cx, y: startPoint.cy };
-	  var p2 = { x: endPoint.cx, y: endPoint.cy };
-	  var mp = { x: ( p1.x + p2.x ) / 2, y: ( p1.y + p2.y ) / 2 } ;  // mid point
-	  var ccp = { x: mp.x + ( p2.y - p1.y ) * ah, y: mp.y + ( p1.x - p2.x ) * ah };  // curve control point
-	  return ctx.quadraticCurveTo( ccp.x, ccp.y, p2.x, p2.y );
+	 	var ah = arcHeight;  // arc height as ratio of distance between points
+		var p1 = { x: startPoint.cx, y: startPoint.cy };
+		var p2 = { x: endPoint.cx, y: endPoint.cy };
+		var mp = { x: ( p1.x + p2.x ) / 2, y: ( p1.y + p2.y ) / 2 } ;  // mid point
+		var ccp = { x: mp.x + ( p2.y - p1.y ) * ah, y: mp.y + ( p1.x - p2.x ) * ah };  // curve control point
+		return ctx.quadraticCurveTo( ccp.x, ccp.y, p2.x, p2.y );
 	},
 
 	///rgba color shift (shifts an rgba color gradually over a designated number of iterations)
@@ -58,11 +58,11 @@ var Tl = {
 		var gsi = (ec.g-sc.g)/ti;  // green shift increment
 		var bsi = (ec.b-sc.b)/ti;  // blue shift increment
 		var asi = (ec.a-sc.a)/ti;  // alpha shift increment
-	  var r = Math.abs(ec.r-cc.r) < Math.abs(rsi) ? ec.r : cc.r + rsi;  // redshift
-	  var g = Math.abs(ec.g-cc.g) < Math.abs(gsi) ? ec.g : cc.g + gsi;  // greenshift
-	  var b = Math.abs(ec.b-cc.b) < Math.abs(bsi) ? ec.b : cc.b + bsi;  // blueshift
-	  var a = Math.abs(ec.a-cc.a) < Math.abs(asi) ? ec.a : cc.a + asi;  // alphashift
-	  return { r: r, g: g, b: b, a: a };
+		var r = Math.abs(ec.r-cc.r) < Math.abs(rsi) ? ec.r : cc.r + rsi;  // redshift
+		var g = Math.abs(ec.g-cc.g) < Math.abs(gsi) ? ec.g : cc.g + gsi;  // greenshift
+	 	var b = Math.abs(ec.b-cc.b) < Math.abs(bsi) ? ec.b : cc.b + bsi;  // blueshift
+		var a = Math.abs(ec.a-cc.a) < Math.abs(asi) ? ec.a : cc.a + asi;  // alphashift
+		return { r: r, g: g, b: b, a: a };
 	},
 
 	///returns an object from an array by object id (requires the object have an "id" key with a unique numerical value)
