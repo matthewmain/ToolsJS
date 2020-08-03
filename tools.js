@@ -48,7 +48,8 @@ var Tl = {
 		return ctx.quadraticCurveTo( ccp.x, ccp.y, p2.x, p2.y );
 	},
 
-	///rgba color shift (shifts an rgba color gradually over a designated number of iterations)
+	//rgba color shift (shifts an rgba color gradually over a designated number of iterations)
+	//color format: { r: <0-255>, g: <0-255>, b: <0-255>, a <0-1>}
 	rgbaCs: function( startColor, endColor, currentColor, totalIterations ) {
 		var sc = startColor;
 		var ec = endColor;
@@ -65,7 +66,7 @@ var Tl = {
 		return { r: r, g: g, b: b, a: a };
 	},
 
-	///returns an object from an array by object id (requires the object have an "id" key with a unique numerical value)
+	//returns an object from an array by object id (requires the object have an "id" key with a unique numerical value)
 	obById: function( array, id ) {
 		return array.find( x => x.id === id );
 	}
