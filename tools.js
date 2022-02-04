@@ -49,7 +49,7 @@ var Tl = {
 	},
 
 	//rgba color shift (shifts an rgba color gradually over a designated number of iterations)
-	//color format: { r: <0-255>, g: <0-255>, b: <0-255>, a <0-1>}
+	//color format: { r: <0-255>, g: <0-255>, b: <0-255>, a: <0-1>}
 	rgbaCs: function( startColor, endColor, currentColor, totalIterations ) {
 		var sc = startColor;
 		var ec = endColor;
